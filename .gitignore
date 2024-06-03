@@ -1,0 +1,6 @@
+.venv
+*.pdf
+*_toc*
+files/
+recipe*.toml
+.DS_Store
