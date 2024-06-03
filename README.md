@@ -5,11 +5,11 @@
 3. Install [pdf.tocgen](https://pypi.org/project/pdf.tocgen/) with `poetry add pdf.tocgen` or `pip install pdf.tocgen`. Note that I am using `poetry` for the following instructions, so kindly change them to the appropriate commands if you are using `pip`
 
 ## Workflow
-**NOTE:** This is a basic workflow that suits my current needs, and you can always modify to suit yours! Kindly consult [pdf.tocgen](https://pypi.org/project/pdf.tocgen/) for a more comprehensive documentation of the tool.
+**NOTE:** This basic workflow suits my current needs, and you can always modify it to suit yours! Kindly consult [pdf.tocgen](https://pypi.org/project/pdf.tocgen/) for a more comprehensive documentation of the tool.
 
 ### 1. Determining the heading attributes
 
-The headings of the PDF file determines can be used as the basis to get the table of contents (TOC). Since these headings have different attributes, i.e., different font sizes, names, placement on the page, etc., we need determine them before we can generate the TOC. To do this, we use the following command:
+The headings of the PDF file can be used as the basis to get the table of contents (TOC). Since these headings have different attributes, i.e., different font sizes, names, placement on the page, etc., we need to determine them before we can generate the TOC. To do this, we use the following command:
 
 ```bash
 poetry run pdfxmeta -a 1 -p 54 in.pdf "Heading 1 text" >> recipe.toml
@@ -69,9 +69,9 @@ poetry run pdftocgen in.pdf < recipe.toml > raw_toc.txt
 **NOTE:** The first line `"Cover" 1` is manually added for the cover page. Depending on your PDF, you may need to ***manually*** add some pages to complete your TOC
 
 ### Cleaning and transforming the generated TOC
-This part can be optional if the generated raw TOC is already enough with your needs. However, since the generated TOC is just a text file, you can always modify it based on your needs.
+This part can be optional if the generated raw TOC is already enough for your needs. However, since the generated TOC is just a text file, you can always modify it based on your needs.
 
-For example, some extracted headings may have poorly formatted strings (e.g. `Chapter 2Introduction` instead of `Chapter 2: Introduction`). In this case, you can use any tools of your choice to go through each line of of the generated TOC to perform the corresponding cleaning and transformations
+For example, some extracted headings may have poorly formatted strings (e.g. `Chapter 2Introduction` instead of `Chapter 2: Introduction`). In this case, you can use any tools of your choice to go through each line of the generated TOC to perform the corresponding cleaning and transformations
 
 **NOTE:** The lines of the generated TOC will have tabs for headings 2 to N and each extracted heading will always be enclosed with a `"`, so keep this in mind when modifying the TOC!
 
@@ -84,5 +84,5 @@ poetry run pdftocio in.pdf < your_toc.txt -o updated.pdf
 * We specify the output pdf with `-o updated.pdf`
 
 ### Verify the updated PDF
-Check your PDF if the table of contents are correct! If not, you can always modify the generated TOC, or you can check again the recipe if you got the correct attributes for your headers.
+Check your PDF if the table of contents is correct! If not, you can always modify the generated TOC, or you can check again the recipe if you got the correct attributes for your headers.
 
