@@ -2,7 +2,7 @@
 ## Prerequisites
 1. Install python and create a new project
 2. Create and activate a virtual environment for the project
-3. Install [pdf.tocgen](https://pypi.org/project/pdf.tocgen/) with `poetry add pdf.tocgen` or `pip install pdf.tocgen`. Note I am using `poetry` for the following instructions, so kindly change them to the appropriate commands if you are using `pip`
+3. Install [pdf.tocgen](https://pypi.org/project/pdf.tocgen/) with `poetry add pdf.tocgen` or `pip install pdf.tocgen`. Note that I am using `poetry` for the following instructions, so kindly change them to the appropriate commands if you are using `pip`
 
 ## Workflow
 **NOTE:** This is a basic workflow that suits my current needs, and you can always modify to suit yours! Kindly consult [pdf.tocgen](https://pypi.org/project/pdf.tocgen/) for a more comprehensive documentation of the tool.
